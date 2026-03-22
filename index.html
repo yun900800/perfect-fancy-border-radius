@@ -168,13 +168,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
       </div>
       <div class="advanced">
-        <div class="advanced__switch">
-          <input class="advanced__check" type="checkbox" id="enable-advanced">
-          <label class="advanced__trigger" for="enable-advanced">Custom size:
-            <span></span>
+      <div class="advanced__switch">
+        <input class="advanced__check" type="checkbox" id="enable-advanced">
+        <label class="advanced__trigger" for="enable-advanced">Custom size:
+          <span></span>
+        </label>
+      </div>
+      <div class="advanced__settings" id="dimension-input">
+        <div class="input-group">
+          <label for="width">Width:</label>
+          <input id="width" type="number" min="5" max="2000" value="300" />
+        </div>
+        <div class="input-group">
+          <label for="height">Height:</label>
+          <input id="height" type="number" min="5" max="2000" value="300" />
+        </div>
+      </div>
+    </div>
+
+    <div class="image-upload">
+      <div class="image-upload__header">
+        <span class="image-upload__title">Background Image</span>
+        <button id="image-upload-btn" class="image-upload__btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Upload Image
+        </button>
+        <input type="file" id="image-input" accept="image/*" style="display: none;">
+        <button id="image-clear-btn" class="image-upload__btn image-upload__btn--clear" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Clear
+        </button>
+      </div>
+      <div class="image-upload__controls" id="image-controls" style="display: none;">
+        <div class="image-upload__option">
+          <label class="image-upload__label">Size:</label>
+          <select id="image-size-select" class="image-upload__select">
+            <option value="cover">cover</option>
+            <option value="contain">contain</option>
+            <option value="100% 100%">stretch</option>
+          </select>
+        </div>
+        <div class="image-upload__option">
+          <label class="image-upload__label">Position:</label>
+          <select id="image-position-select" class="image-upload__select">
+            <option value="center">center</option>
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="top left">top left</option>
+            <option value="top right">top right</option>
+            <option value="bottom left">bottom left</option>
+            <option value="bottom right">bottom right</option>
+          </select>
+        </div>
+        <div class="image-upload__option">
+          <label class="image-upload__label">
+            <input type="checkbox" id="image-repeat-checkbox">
+            Repeat
           </label>
         </div>
-        <div class="advanced__settings" id="dimension-input">
+      </div>
+    </div>
+
+    <div class="advanced" id="dimension-input-wrapper" style="display: none;">
           <div class="input-group">
             <label for="width">Width:</label>
             <input id="width" type="number" min="5" max="2000" value="300" />
@@ -183,7 +247,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label for="height">Height:</label>
             <input id="height" type="number" min="5" max="2000" value="300" />
           </div>
-        </div>
       </div>
     </div>
 
