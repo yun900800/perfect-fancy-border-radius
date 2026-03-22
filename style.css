@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.preview-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    background: #fafafa;
+    border-radius: 15px;
+}
+
+.blob {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #6366f1, #a855f7);
+    transition: border-radius 0.4s ease; /* 拖动滑块时的平滑过渡 */
+}
+
+.controls input {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background: #6366f1;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover { background: #4f46e5; }
+
+.code-output {
+    text-align: left;
+    background: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+}

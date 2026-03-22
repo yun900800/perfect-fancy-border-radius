@@ -8,4 +8,250 @@
 @import "generator";
 @import "output";
 @import "advanced";
-@import "company_link";
+
+// Animation panel (full-control)
+.animation-box {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px dashed rgba($white, 0.3);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(135deg, rgba($blue, 0.3) 0%, rgba($cyan, 0.3) 100%);
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+
+  .animation-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .animation-title {
+      color: rgba($white, 0.9);
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .preset-select {
+    background: rgba($white, 0.15);
+    border: 1px solid rgba($white, 0.3);
+    border-radius: 4px;
+    color: rgba($white, 0.9);
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    
+    option {
+      background: $dark;
+      color: $white;
+    }
+  }
+
+  .animation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 2px;
+      border: none;
+      background: $cyan;
+      color: rgba($white, 0.95);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease-out;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+
+      &:hover {
+        background: $blue;
+      }
+
+      &.btn--secondary {
+        background: rgba($white, 0.15);
+        &:hover {
+          background: rgba($white, 0.25);
+        }
+      }
+
+      &.btn--copy {
+        background: linear-gradient(45deg, $blue 0%, $cyan 100%);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
+
+  .animation-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba($dark, 0.3);
+    border-radius: 6px;
+
+    .setting-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .setting-label {
+        color: rgba($white, 0.8);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .setting-value {
+        color: #00ffff;
+        font-family: 'Ubuntu Mono', monospace;
+        font-size: 0.8rem;
+        min-width: 30px;
+      }
+
+      .setting-range {
+        width: 100px;
+        height: 4px;
+        -webkit-appearance: none;
+        background: rgba($white, 0.2);
+        border-radius: 2px;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 14px;
+          height: 14px;
+          background: $cyan;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+
+      .setting-select {
+        background: rgba($white, 0.15);
+        border: 1px solid rgba($white, 0.3);
+        border-radius: 4px;
+        color: rgba($white, 0.9);
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        
+        option {
+          background: $dark;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .frames-list-container {
+    margin-bottom: 12px;
+
+    .frames-list-header {
+      font-size: 13px;
+      color: rgba($white, 0.7);
+      margin-bottom: 6px;
+      font-family: 'Ubuntu Mono', monospace;
+    }
+
+    .frames-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 80px;
+      overflow-y: auto;
+
+      .frame-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: rgba($white, 0.1);
+        border: 1px solid rgba($white, 0.2);
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 11px;
+        color: rgba($white, 0.8);
+
+        .frame-delete {
+          background: none;
+          border: none;
+          color: $cyan;
+          cursor: pointer;
+          padding: 0;
+          font-size: 14px;
+          line-height: 1;
+          opacity: 0.7;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .keyframes-output {
+    max-height: 200px;
+    overflow: auto;
+    border-radius: 2px;
+    background: rgba($dark, 0.8);
+    border: 1px solid rgba($white, 0.1);
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($white, 0.1);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, $blue 0%, $cyan 100%);
+      border-radius: 4px;
+      
+      &:hover {
+        background: $cyan;
+      }
+    }
+
+    pre {
+      margin: 0;
+      padding: 14px;
+    }
+
+    code {
+      color: #00ffff;
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+  }
+
+  .frames-list-container .frames-list {
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($white, 0.05);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, $blue 0%, $cyan 100%);
+      border-radius: 3px;
+    }
+  }
+}
+

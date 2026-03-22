@@ -6,7 +6,7 @@
 
 html,
 body {
-  background: $black;
+  background: $dark;
   color: white;
   font-family: "M PLUS Rounded 1c", sans-serif;
   overflow-x: hidden;
@@ -17,7 +17,7 @@ body {
   left: 50%;
   top: 30%;
   transform: translate(-50%, 0);
-  color: $black;
+  color: $dark;
   font-size: 1.5rem;
   pointer-events: none;
   z-index: 100;
@@ -38,7 +38,7 @@ body {
 
   &__heart {
     padding: 0 0.125em;
-    color: $purple;
+    color: $blue;
   }
 
   a {
@@ -47,6 +47,98 @@ body {
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+  
+  .footer-links {
+    margin-bottom: 8px;
+    
+    a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 4px 12px;
+      background: rgba($white, 0.1);
+      border-radius: 15px;
+      transition: background 0.3s;
+      
+      &:hover {
+        background: rgba($white, 0.2);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba($dark, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  z-index: 1000;
+  border-top: 1px solid rgba($white, 0.2);
+  
+  .cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba($white, 0.9);
+      flex: 1;
+      min-width: 300px;
+      
+      a {
+        color: #00ffff;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .cookie-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cookie-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    
+    &--accept {
+      background: linear-gradient(135deg, $blue 0%, $cyan 100%);
+      color: $white;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    
+    &--reject {
+      background: rgba($white, 0.15);
+      color: rgba($white, 0.9);
+      border: 1px solid rgba($white, 0.3);
+      
+      &:hover {
+        background: rgba($white, 0.25);
+      }
     }
   }
 }

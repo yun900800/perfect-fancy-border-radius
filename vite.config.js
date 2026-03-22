@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "./",
-  base: "/fancy-border-radius/",
+  base: "/",
   build: {
     outDir: "dist",
     rollupOptions: {

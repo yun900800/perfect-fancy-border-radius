@@ -13,3 +13,6 @@ var movables = {
 };
 let params = FullControlBox.loadUrlParams(window.location.href);
 var myBox = new FullControlBox({ moveableElems: movables, initState: params });
+myBox.initAnimation();
+
+window.myBox = myBox;

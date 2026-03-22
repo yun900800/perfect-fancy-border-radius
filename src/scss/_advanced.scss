@@ -9,6 +9,9 @@
   justify-content: space-between;
   align-items: center;
   color: rgba($white, 0.9);
+  border: 1px dashed rgba($white, 0.3);
+  border-radius: 4px;
+  padding: 12px;
 
   @media screen and (min-width: 560px) {
     font-size: 1.25rem;
@@ -61,7 +64,7 @@
 
   &__check:checked + .advanced__trigger {
     span:after {
-      background: $pink;
+      background: $cyan;
       left: 1.15 * $trigger-size;
       border-radius: 37% 63% 55% 45% / 25% 50% 50% 75%;
     }
@@ -92,7 +95,7 @@
         width: 0.7 * $trigger-size;
         height: 0.7 * $trigger-size;
         border-radius: 50% 56% 29% 70% / 50% 73% 38% 50% ;
-        background: $black;
+        background: $dark;
         position: absolute;
         left: .15 * $trigger-size;
         top: .15 * $trigger-size;
@@ -108,7 +111,7 @@
     border: none;
     background: $white;
     font-family: 'Ubuntu Mono', monospace;
-    color: $black;
+    color: $dark;
     padding: 0.5em 0.625em;
   }
 
